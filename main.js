@@ -16,15 +16,15 @@ con.connect ((err) =>{
 });
 app.get('/', (req,res) => {
     database.query("SELECT * FROM users", (err, rows) => {
-if (err)throw err;
-console.error(err.stack)
-nextTick(err);
-res.json({
-succes: true,
-messages: "getting user",
-data :rows,
-})
+        if (err)throw err;
+        console.error(err.stack)
+    nextTick(err);
+    res.json({
+    succes: true,
+    messages: "getting user",
+        data :rows,
     })
+  })
    
 });
 app.listen(3306,()=>{
